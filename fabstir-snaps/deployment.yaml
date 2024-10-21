@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fabstir-snaps
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fabstir-snaps
+  template:
+    metadata:
+      labels:
+        app: fabstir-snaps
+    spec:
+      containers:
+        - name: fabstir-snaps
+          image: ammarhaiderak/fabstir-snaps:7d9b14a
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000

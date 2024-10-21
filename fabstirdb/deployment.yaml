@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fabstir-db
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fabstir-db
+  template:
+    metadata:
+      labels:
+        app: fabstir-db
+    spec:
+      containers:
+        - name: fabstir-db
+          image: ammarhaiderak/fabstir-db:7d9b14a
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3001
