@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: transcoder
-          image: ammarhaiderak/fabstir-transcoder:e86172b
+          image: ammarhaiderak/fabstir-transcoder:d2a00ce
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 50051
