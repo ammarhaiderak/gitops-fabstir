@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: fabstir-db
-          image: ammarhaiderak/fabstir-db:8e361f6
+          image: ammarhaiderak/fabstir-db:9c35f4320c51a496c822b762ee66892bb8a9f9d6
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3001
