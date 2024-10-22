@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: transcoder
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: transcoder
   ports:
     - port: 80
       protocol: TCP
       targetPort: 50051
-      nodePort: 31000
