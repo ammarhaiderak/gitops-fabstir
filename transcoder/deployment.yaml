@@ -18,8 +18,8 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 50051
-      envFrom:
-      - configMapRef:
-          name: transcoder-env
+          envFrom:
+          - configMapRef:
+              name: transcoder-env
       nodeSelectors:
       - vke.vultr.com/node-pool: gpu-supported
