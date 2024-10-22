@@ -22,9 +22,9 @@ spec:
           - configMapRef:
               name: fabstirdb-env
           volumeMounts:
-          - name: orbitdb
+          - name: fabstirdb
             mountPath: /app/orbitdb
-          - name: keys
+          - name: fabstirdb
             mountPath: /app/keys
       volumes:
         - name: fabstirdb
