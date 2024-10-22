@@ -1,7 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: fabstir-db
+  annotations:
+    service.beta.kubernetes.io/vultr-loadbalancer-protocol: "http"
+  name: fabstir-db-lb
 spec:
   type: LoadBalancer
   selector:

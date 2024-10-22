@@ -21,5 +21,14 @@ spec:
           envFrom:
           - configMapRef:
               name: fabstirdb-env
+          volumeMounts:
+          - name: orbitdb
+            mountPath: /app/orbitdb
+          - name: keys
+            mountPath: /app/keys
+      volumes:
+        - name: fabstirdb
+          persistentVolumeClaim:
+            claimName: fabstirdb-pvc
       nodeSelectors:
       - vke.vultr.com/node-pool: main
