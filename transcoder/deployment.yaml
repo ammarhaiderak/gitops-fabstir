@@ -18,5 +18,5 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 50051
-       nodeSelectors:
-          vke.vultr.com/node-pool: gpu-supported
+      nodeSelectors:
+        vke.vultr.com/node-pool: gpu-supported
