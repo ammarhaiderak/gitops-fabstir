@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: fabstir-db
+spec:
+  selector:
+    matchLabels:
+      app: fabstir-db
+  serviceName: fabstir-db
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fabstir-db
+    spec:
+      containers:
+        - name: fabstir-db
+          image: ammarhaiderak/fabstir-db:9c35f4320c51a496c822b762ee66892bb8a9f9d6
+          ports:
+            - containerPort: 3001
+          volumeMounts:
+            - name: fabstirdb
+              mountPath: /app/orbitdb
+            - name: fabstirdb
+              mountPath: /app/keys
+      nodeSelector:
+        vke.vultr.com/node-pool: main
+
+  volumeClaimTemplates:
+    - metadata:
+        name: fabstirdb
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        resources:
+          requests:
+            storage: 50Gi
+        storageClassName: vultr-block-storage
