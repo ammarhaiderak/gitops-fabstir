@@ -23,6 +23,9 @@ spec:
               mountPath: /app/orbitdb
             - name: fabstirdb
               mountPath: /app/keys
+          envFrom:
+            - configMapRef:
+                name: fabstirdb-env
       nodeSelector:
         vke.vultr.com/node-pool: main
 
